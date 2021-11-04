@@ -21,7 +21,7 @@ describe('Fruit backet App logic tests', () => {
     await backetInst.addFruit({type:"Watermelon", price: 30.00});
   });
   it('Should find all fruits backet for the given fruit', async () => {
-    assert.deepEqual([{ "id": 10, "price": "10.50", "qty": 1, "type": "Mango" }], await backetInst.findFruit({ type: "Mango" }));
+    assert.deepEqual([{ "id": 4, "price": "10.50", "qty": 1, "type": "Mango" }], await backetInst.findFruit({ type: "Mango" }));
   });
   it('Should update to the backet', async () => {
     assert.equal('updated', await backetInst.updateQty({ type: "Orange" }));
