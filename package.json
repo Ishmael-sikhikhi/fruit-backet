@@ -4,7 +4,7 @@
   "description": "fruit-backet",
   "main": "index.js",
   "directories": {
-    "test": "mocha"
+    "npm test": "test"
   },
   "scripts": {
     "test": "mocha"
