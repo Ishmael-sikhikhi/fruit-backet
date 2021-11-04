@@ -5,7 +5,6 @@ module.exports = (pool)=>{
         let price = theFruit.price;
 
         let checkFruit = await pool.query(`select type from fruitbacket where type = $1`,[fruit]);
-        console.log(checkFruit.rowCount !== 0);
         if(checkFruit.rowCount === 0){
             await pool.query(`insert into fruitbacket (type,qty,price) values ($1,$2,$3)`,[fruit,1,price])
         }
