@@ -13,7 +13,6 @@ module.exports = (pool)=>{
 
     async function updateQty(backet){
         const fruitType = backet.type;
-        console.log('Type: '+fruitType);
         let checkFruit = (`select * from fruitbacket where type = $1`,[fruitType]);
         if(checkFruit.rowCount !== 0){
             await pool.query(`update fruitbacket set qty = qty + 1 where type = $1`,[fruitType]);
@@ -40,7 +39,6 @@ module.exports = (pool)=>{
         let fruit = theFruit.type;
         let allFruit = await pool.query(`select qty from fruitbacket where type = $1`, [fruit]);
        let total = allFruit.rows[0].qty;
-       console.log(total);
         return total;
     }
 

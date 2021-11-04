@@ -17,7 +17,7 @@ beforeEach(async () => {
 });
 
 describe('Fruit backet App logic tests', () => {
-  it('', async ()=>{
+  it('create a new fruit basket for a given fruit type, qty & fruit price', async ()=>{
     await backetInst.addFruit({type:"Watermelon", price: 30.00});
   });
   it('Should find all fruits backet for the given fruit', async () => {
