@@ -4,7 +4,7 @@
   "description": "fruit-backet",
   "main": "index.js",
   "directories": {
-    "npm test": "test"
+    "test": "test"
   },
   "scripts": {
     "test": "mocha"
@@ -16,6 +16,14 @@
     "pg": "^8.7.1"
   },
   "devDependencies": {
-    "mocha": "^9.1.1",
-  }
+    "mocha": "^9.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishmael-sikhikhi/fruit-backet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ishmael-sikhikhi/fruit-backet/issues"
+  },
+  "homepage": "https://github.com/Ishmael-sikhikhi/fruit-backet#readme"
 }
