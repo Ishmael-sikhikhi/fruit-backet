@@ -1,0 +1,18 @@
+{
+  "name": "fruit-backet",
+  "version": "1.0.0",
+  "description": "fruit-backet",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Sikhikhi, I",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}
