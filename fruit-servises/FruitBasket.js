@@ -32,7 +32,6 @@ module.exports = (pool)=>{
         let priceByQty = await pool.query(`select qty*price as tprice from fruitbacket where type = $1`, [fruit]);
         priceByQty = priceByQty.rows;
         let totalPrice = priceByQty[0].tprice;
-        console.log(totalPrice);
         return totalPrice;
     }
 
