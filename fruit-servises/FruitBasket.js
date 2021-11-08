@@ -8,6 +8,7 @@ module.exports = (pool)=>{
         if(checkFruit.rowCount === 0){
             await pool.query(`insert into fruitbacket (type,qty,price) values ($1,$2,$3)`,[fruit,1,price])
         }
+        return "insert complete"
     }
 
     async function updateQty(backet){
@@ -28,16 +29,17 @@ module.exports = (pool)=>{
 
     async function totalPrice(theFruit){
         let fruit = theFruit.type;
-        let priceByQty = await pool.query(`select qty, price from fruitbacket where type = $1`, [fruit]);
+        let priceByQty = await pool.query(`select qty*price as tprice from fruitbacket where type = $1`, [fruit]);
         priceByQty = priceByQty.rows;
-        let totalPrice = priceByQty[0].qty * priceByQty[0].price;
+        let totalPrice = priceByQty[0].tprice;
+        console.log(totalPrice);
         return totalPrice;
     }
 
     async function totalFruits(theFruit){
         let fruit = theFruit.type;
-        let allFruit = await pool.query(`select qty from fruitbacket where type = $1`, [fruit]);
-       let total = allFruit.rows[0].qty;
+        let allFruit = await pool.query(`select sum(qty) from fruitbacket where type = $1`, [fruit]);
+       let total = allFruit.rows[0].sum;
         return total;
     }
 

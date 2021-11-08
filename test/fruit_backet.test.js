@@ -18,7 +18,8 @@ beforeEach(async () => {
 
 describe('Fruit backet App logic tests', () => {
   it('create a new fruit basket for a given fruit type, qty & fruit price', async ()=>{
-    await backetInst.addFruit({type:"Watermelon", price: 30.00});
+    assert.equal("insert complete",await backetInst.addFruit({type:"Watermelon", price: 30.00}))
+    
   });
   it('Should find all fruits backet for the given fruit', async () => {
     assert.deepEqual([{ "id": 4, "price": "10.50", "qty": 1, "type": "Mango" }], await backetInst.findFruit({ type: "Mango" }));
